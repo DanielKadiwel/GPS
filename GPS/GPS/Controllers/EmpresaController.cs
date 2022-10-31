@@ -1,7 +1,7 @@
 ﻿using GPS.Domain.VO;
 using GPS.Repository.Interfaces;
 using Newtonsoft.Json;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GPS.Controllers
 {
@@ -14,6 +14,11 @@ namespace GPS.Controllers
         public EmpresaController(IGpsRepository gpsRepository)
         {
             _gpsRepository = gpsRepository;
+        }
+
+        public ActionResult Index()
+        {
+            return View();
         }
 
         public string GetEmpresasWService(string cnpj)
@@ -61,33 +66,35 @@ namespace GPS.Controllers
 
                 if (exists != null)
                 {
-                    empr.Id = exists.Id;
+                    foreach (var x in Empresas)
+                    {
+                        empr.Id = exists.Id;
 
-                    _gpsRepository.Update(empr);
-                    _gpsRepository.SaveChancesAsync();
+                        _gpsRepository.Update(empr);
+                        _gpsRepository.SaveChancesAsync();
 
-                    output = String.Format("Empresa: {0} \n Cnpj: {1} \n Atualizada com Sucesso!", empr.nome, empr.cnpj);
-                    output = JsonConvert.SerializeObject(output);
+                        output = String.Format("Cnpj: {0} \n Atualizado com Sucesso!", empr.cnpj);
+                        output = JsonConvert.SerializeObject(output);
+                    }
                 }
                 else
                 {
-                    _gpsRepository.Add(empr);
-                    _gpsRepository.SaveChancesAsync();
-
-                    output = String.Format("Empresa: {0} \n Cnpj: {1} \n Adicionada a Base com Sucesso!", empr.nome, empr.cnpj);
-                    output = JsonConvert.SerializeObject(output);
+                    foreach (var x in Empresas)
+                    {
+                        _gpsRepository.Add(empr);
+                        _gpsRepository.SaveChancesAsync();
+                        output = String.Format("Cnpj: {0} \n Adicionada a Base com Sucesso!", empr.cnpj);
+                        output = JsonConvert.SerializeObject(output);
+                    }
                 }
 
                 return output;
-
             }
             catch (System.Exception ex)
             {
-
                 string msg = ex.Message.ToString();
 
                 return null;
-
             }
         }
     }

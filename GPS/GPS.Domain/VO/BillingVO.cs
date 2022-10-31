@@ -14,7 +14,7 @@ namespace GPS.Domain.VO
         [JsonIgnore]
         [IgnoreDataMember]
         public virtual EmpresaVO Empresa { get; set; }
-        public Boolean free { get; set; }
-        public Boolean database { get; set; }
+        public Boolean? free { get; set; }
+        public Boolean? database { get; set; }
     }
 }

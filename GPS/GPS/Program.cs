@@ -1,26 +1,19 @@
 using GPS.Repository;
 using GPS.Repository.Context;
 using GPS.Repository.Interfaces;
-using Microsoft.Data.SqlClient;
-using System.Data;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GPS.Domain;
 using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<GpsDbContext>();
-builder.Services.AddSingleton<IGpsRepository, GpsRepository>();
+
+builder.Services.AddScoped<IGpsRepository, GpsRepository>();
+
+builder.Services.AddDbContext<GpsDbContext>(options =>
+  options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+
+builder.Services.AddControllersWithViews().AddNewtonsoftJson().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 var app = builder.Build();
 

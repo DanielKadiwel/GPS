@@ -10,16 +10,16 @@ namespace GPS.Repository.Context
 {
     public class GpsDbContext : DbContext
     {
-        //public GpsDbContext(DbContextOptions<GpsDbContext> options) : base(options)
-        //{ }
+        public GpsDbContext(DbContextOptions<GpsDbContext> options) : base(options)
+        { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=GPS;Data Source=DESKTECH-DK;");
+            optionsBuilder.UseSqlServer("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=GPS;Data Source=DESKTECH-DK;");
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{ }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        { }
 
         public DbSet<EmpresaVO> Empresas { get; set; }
         public DbSet<AtividadePrincipalVO> atividade_principais { get; set; }

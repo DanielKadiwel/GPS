@@ -12,3 +12,17 @@ D:\#DEVELOP#\GPS\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.pdb
 D:\#DEVELOP#\GPS\GPS\GPS.Domain\obj\Debug\net6.0\ref\GPS.Domain.dll
 D:\#DEVELOP#\GPS\GPS\GPS.Domain\bin\Debug\net6.0\GPS.Domain.runtimeconfig.json
 D:\#DEVELOP#\GPS\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.genruntimeconfig.cache
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\bin\Debug\net6.0\GPS.Domain.deps.json
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\bin\Debug\net6.0\GPS.Domain.runtimeconfig.json
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\bin\Debug\net6.0\GPS.Domain.dll
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\bin\Debug\net6.0\GPS.Domain.pdb
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.csproj.AssemblyReference.cache
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.AssemblyInfoInputs.cache
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.AssemblyInfo.cs
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.csproj.CoreCompileInputs.cache
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.dll
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\refint\GPS.Domain.dll
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.pdb
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\GPS.Domain.genruntimeconfig.cache
+D:\#DEVELOP#\GPS2\GPS\GPS.Domain\obj\Debug\net6.0\ref\GPS.Domain.dll

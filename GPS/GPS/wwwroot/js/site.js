@@ -3,7 +3,6 @@
 
 // Write your JavaScript code.
 
-/*Botão Listar Empresas Cadastradas*/
 $('#btnEmpresasCadastradas').click(function () {
     $('#EmpresasCadastradas').empty();
     $.ajax({
@@ -21,7 +20,6 @@ $('#btnEmpresasCadastradas').click(function () {
     });
 });
 
-/*Botão Adicionar cnpj em Lista para Pesquisar*/
 $('#btnAddList').click(function () {
     $('#ResultadoPesquisa').empty();
 
@@ -67,7 +65,6 @@ function addListItem(cnpj) {
     $("#ListaPesquisa ul").append("<li>" + cnpj + "</li>");
 }
 
-/*Botão Pesquisar Lista de cnpjs*/
 $('#btnPesquisarList').click(function () {
     pesquisaList();
     ctrlShowContainers('#divResPesq', true);

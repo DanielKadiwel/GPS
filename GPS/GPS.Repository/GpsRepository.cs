@@ -1,4 +1,5 @@
-﻿using GPS.Domain.VO;
+﻿using Dapper;
+using GPS.Domain.VO;
 using GPS.Repository.Context;
 using GPS.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,6 @@ namespace GPS.Repository
     public class GpsRepository : IGpsRepository
     {
         private readonly GpsDbContext _gpsDbContext;
-        private readonly IDbConnection _connection;
 
         public GpsRepository(GpsDbContext gpsDbContext)
         {

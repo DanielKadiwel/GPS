@@ -95,7 +95,7 @@ function pesquisaEmpresas(cnpj) {
     $.ajax({
         dataType: "json",
         type: "GET",
-        url: "/Empresa/GetEmpresasWService",
+        url: "/Empresa/GetEmpresas",
         data: "cnpj=" + cnpj + "",
         success: function (data) {
 
@@ -230,7 +230,7 @@ function SalvarEmpresa(data) {
     $.ajax({
         dataType: "json",
         type: "POST",
-        url: "/Empresa/SaveEmpresas",
+        url: "/Empresa/Save",
         data: { empresa: datastringify },
         success: function (data) {
             alert(data);

@@ -10,6 +10,12 @@ namespace GPS.Repository.Context
 {
     public class GpsDbContext : DbContext
     {
+        public DbSet<EmpresaVO> Empresas { get; set; }
+        public DbSet<AtividadePrincipalVO> atividade_principais { get; set; }
+        public DbSet<AtividadesSecundariasVO> atividades_secundarias { get; set; }
+        public DbSet<BillingVO> billing { get; set; }
+        public DbSet<QsaVO> qsas { get; set; }
+
         public GpsDbContext(DbContextOptions<GpsDbContext> options) : base(options)
         { }
 
@@ -21,10 +27,5 @@ namespace GPS.Repository.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { }
 
-        public DbSet<EmpresaVO> Empresas { get; set; }
-        public DbSet<AtividadePrincipalVO> atividade_principais { get; set; }
-        public DbSet<AtividadesSecundariasVO> atividades_secundarias { get; set; }
-        public DbSet<BillingVO> billing { get; set; }
-        public DbSet<QsaVO> qsas { get; set; }
     }
 }

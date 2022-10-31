@@ -9,7 +9,7 @@ namespace GPS.Controllers
     {
         private readonly IGpsRepository _gpsRepository;
 
-        string Baseurl = "https://www.receitaws.com.br/v1/"; //Hardcode
+        string baseUrl = "https://www.receitaws.com.br/v1/"; //Hardcode
 
         public EmpresaController(IGpsRepository gpsRepository)
         {
@@ -21,13 +21,13 @@ namespace GPS.Controllers
             return View();
         }
 
-        public string GetEmpresasWService(string cnpj)
+        public string GetEmpresas(string cnpj)
         {
             EmpresaVO empresa = null;
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(Baseurl);
+                client.BaseAddress = new Uri(baseUrl);
 
                 //HTTP GET
                 var responseTask = client.GetAsync("cnpj/" + cnpj);
@@ -53,7 +53,7 @@ namespace GPS.Controllers
             }
         }
 
-        public string SaveEmpresas(string empresa)
+        public string Save(string empresa)
         {
             string output = "";
             try
@@ -62,7 +62,7 @@ namespace GPS.Controllers
 
                 EmpresaVO empr = Empresas.ToArray()[0];
 
-                EmpresaVO exists = _gpsRepository.GetEmpresasByCnpj(empr.cnpj);
+                EmpresaVO exists = _gpsRepository.GeyByCNPJ(empr.cnpj);
 
                 if (exists != null)
                 {

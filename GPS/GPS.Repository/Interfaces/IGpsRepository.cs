@@ -13,6 +13,6 @@ namespace GPS.Repository.Interfaces
         void Add<T>(T entity) where T : class;
         void Update<T>(T entity) where T : class;
         Task<bool> SaveChancesAsync();
-        EmpresaVO GetEmpresasByCnpj(string cnpj);
+        EmpresaVO GeyByCNPJ(string cnpj);
     }
 }
